@@ -51,4 +51,68 @@ The primary goal of Week 1 is to establish a stable frontend–backend foundatio
 ---
 
 ## Project Structure
+```text
+ATS-Resume-Builder/
+├── Frontend/
+│   └── src/
+│       ├── components/
+│       │   ├── ResumeForm.js
+│       │   └── ResumePreview.js
+│       ├── context/
+│       │   └── ResumeContext.js
+│       ├── pages/
+│       │   └── Builder.js
+│       ├── index.css
+│       └── index.js
+├── Server/
+│   ├── models/
+│   │   └── Resume.js
+│   ├── routes/
+│   │   └── resumeRoutes.js
+│   ├── server.js
+│   └── package.json
+└── README.md
+````
+-----------------------------
+
+⚙️ Setup Instructions
+1️⃣ Clone the Repository
+git clone <your-repo-url>
+cd ATS-Resume-Builder
+________________________________________
+2️⃣ Backend Setup
+cd Server
+npm install
+Create a .env file inside Server folder:
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+Start backend server:
+npm start
+Backend will run on:
+http://localhost:5000
+________________________________________
+3️⃣ Frontend Setup
+cd Frontend
+npm install
+npm start
+Frontend will run on:
+http://localhost:3000
+________________________________________
+
+🧪 How It Works
+1.	User enters resume details in the form
+2.	Resume preview updates in real time
+3.	Users can add:
+o	Skills
+o	Experience
+o	Projects
+o	Education
+o	Courses
+4.	Experience and project descriptions support point-wise input
+5.	Clicking Save Resume stores data in MongoDB
+________________________________________
+
+
+
+
 
