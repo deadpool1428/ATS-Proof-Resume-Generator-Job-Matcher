@@ -17,6 +17,10 @@ mongoose
 
 /* Routes */
 app.use("/api/resume", require("./routes/resumeRoutes"));
+const atsRoutes = require("./routes/atsRoutes");
+
+app.use("/api/ats", atsRoutes);
+
 
 /* Health Check */
 app.get("/", (req, res) => {
