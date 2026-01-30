@@ -114,5 +114,22 @@ ________________________________________
 
 
 
+# Week 2 – Implementation Update
+
+## Overview
+Week 2 focuses on implementing core functionality for the ATS Resume Builder, including resume persistence, ATS analysis, and validation improvements.
+
+## Features Added in Week 2
+- Resume builder with structured sections
+- MongoDB integration for resume storage
+- Rule-based ATS analyzer with weighted keyword matching
+- Save Resume validation
+- ATS Analyzer input validation
+- Improved UI consistency
+
+## Status
+Week 2 implementation is complete and locked.
+
+
 
 
