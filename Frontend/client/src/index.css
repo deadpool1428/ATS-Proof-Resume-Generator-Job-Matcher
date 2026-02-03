@@ -326,3 +326,147 @@ button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: white;
+  }
+}
+/* ===============================
+   ATS ANALYZER CONTAINER
+================================ */
+.ats-analyzer {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin-top: 24px;
+}
+
+/* Title */
+.ats-analyzer h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+/* ===============================
+   JOB DESCRIPTION TEXTAREA
+================================ */
+.ats-analyzer textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ats-analyzer textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+/* ===============================
+   ANALYZE BUTTON
+================================ */
+.ats-analyzer button {
+  margin-top: 14px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #2563eb;
+  color: #ffffff;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.ats-analyzer button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.ats-analyzer button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===============================
+   RESULT SECTION
+================================ */
+.ats-result {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Score + Match Level */
+.ats-result p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* ===============================
+   KEYWORD LISTS
+================================ */
+.ats-result strong {
+  font-weight: 600;
+}
+
+.ats-result ul {
+  margin-top: 6px;
+  padding-left: 18px;
+}
+
+.ats-result li {
+  font-size: 13.5px;
+  margin-bottom: 4px;
+  color: #374151;
+}
+
+/* ===============================
+   MATCH LEVEL COLORS
+================================ */
+.match-strong {
+  color: #16a34a; /* green */
+  font-weight: 600;
+}
+
+.match-moderate {
+  color: #d97706; /* amber */
+  font-weight: 600;
+}
+
+.match-poor {
+  color: #dc2626; /* red */
+  font-weight: 600;
+}
+
+/* ===============================
+   ERROR MESSAGE
+================================ */
+.ats-error {
+  margin-top: 10px;
+  color: #dc2626;
+  font-size: 13px;
+}
