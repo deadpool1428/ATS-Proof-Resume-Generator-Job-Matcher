@@ -1,36 +1,52 @@
 const mongoose = require("mongoose");
 
-const ResumeSchema = new mongoose.Schema({
-  personalInfo: {
-    fullName: String,
-    email: String,
-    phone: String,
-    linkedin: String
-  },
-  summary: String,
-  skills: [String],
-  experience: [
-    {
-      company: String,
-      role: String,
-      startDate: String,
-      endDate: String,
-      description: String
-    }
-  ],
-  education: [
-    {
-      institution: String,
-      degree: String,
-      year: String
-    }
-  ],
-  courses: [String],
-  declaration: String,
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
+const ExperienceSchema = new mongoose.Schema({
+  role: { type: String, required: true },
+  company: { type: String, required: true },
+  description: { type: String, required: true }
 });
+
+const EducationSchema = new mongoose.Schema({
+  degree: { type: String, required: true },
+  institution: { type: String, required: true },
+  year: { type: String, required: true }
+});
+
+const ResumeSchema = new mongoose.Schema(
+  {
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    phone: { type: String, required: true },
+
+    summary: { type: String, required: true },
+
+    skills: {
+      type: [String],
+      required: true,
+      validate: v => v.length > 0
+    },
+
+    experience: {
+      type: [ExperienceSchema],
+      required: true,
+      validate: v => v.length > 0
+    },
+
+    education: {
+      type: [EducationSchema],
+      required: true,
+      validate: v => v.length > 0
+    },
+
+    courses: { type: [String], default: [] },
+
+    declaration: { type: String, required: true },
+
+    layout: {
+      centerName: { type: Boolean, default: false }
+    }
+  },
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Resume", ResumeSchema);
