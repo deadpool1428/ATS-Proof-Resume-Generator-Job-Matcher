@@ -1,286 +1,192 @@
-ATS-Friendly Resume Builder – Week 1
-________________________________________
+📘 ATS-Friendly Resume Builder
+Software Requirements Specification (SRS)
+
+Internship Project | Weeks 1–3
+
 1. Introduction
 1.1 Purpose
-The purpose of this document is to define the functional and non-functional requirements for Week-1 of the ATS-Friendly Resume Builder project. This phase focuses on building the core resume creation interface, enabling users to input, preview, and store resume data in a structured and professional format.
-This document serves as a reference for developers, mentors, and evaluators involved in the internship program.
-________________________________________
+
+This document specifies the functional and non-functional requirements of the ATS-Friendly Resume Builder, developed as part of an enterprise internship program.
+
+The SRS captures requirements incrementally across Week 1, Week 2, and Week 3, and serves as a reference for:
+
+Developers
+
+Mentors
+
+Evaluators
+
 1.2 Scope
-The ATS Resume Builder is a web-based application designed to help users—especially freshers, interns, and entry-level professionals—create clean, professional, and ATS-compatible resumes.
-Week-1 scope includes:
-•	Resume data input through a structured UI
-•	Real-time resume preview
-•	Resume data storage using MongoDB
-•	Support for both freshers and experienced users
-Advanced features such as ATS scoring, AI suggestions, and PDF export are out of scope for Week-1.
-________________________________________
-1.3 Definitions, Acronyms, and Abbreviations
-Term	Description
+
+The ATS-Friendly Resume Builder is a web-based application that helps users—especially freshers, interns, and entry-level professionals—create professional, ATS-compatible resumes.
+
+The project evolves week-by-week:
+
+Week 1: Resume creation & storage
+
+Week 2: ATS analysis & scoring
+
+Week 3: ATS accuracy improvements & resume export
+
+1.3 Definitions & Abbreviations
+Term	Meaning
 ATS	Applicant Tracking System
 UI	User Interface
 SRS	Software Requirements Specification
 CRUD	Create, Read, Update, Delete
-________________________________________
+JD	Job Description
 2. Overall Description
 2.1 Product Perspective
+
 The system follows a client–server architecture:
-•	Frontend: React.js (Resume input & preview)
-•	Backend: Node.js + Express.js
-•	Database: MongoDB (via MongoDB Compass / Atlas)
-Week-1 focuses on resume creation and visualization, not deployment or analytics.
-________________________________________
-2.2 User Classes and Characteristics
-User Type	Description
-Fresher / Student	Creates resumes using projects and skills
-Intern	Adds projects, internships, and certifications
-Experienced Professional	Adds work experience and education
-No authentication is required in Week-1.
-________________________________________
-2.3 Operating Environment
-•	Frontend: React.js (Browser-based)
-•	Backend: Node.js with Express
-•	Database: MongoDB
-•	OS: Windows / Linux / macOS
-•	Browser: Chrome, Edge, Firefox
-________________________________________
-2.4 Design Constraints
-•	Resume must be ATS-friendly (simple structure, readable text)
-•	UI must be clean and professional
-•	No external UI frameworks (Bootstrap, MUI, etc.) in Week-1
-•	Data persistence limited to resume storage
-________________________________________
-2.5 Assumptions and Dependencies
-•	User has basic internet access
-•	MongoDB service is running
-•	Backend API is reachable from frontend
-•	User inputs data manually
-________________________________________
+
+Frontend: React.js (resume input & preview)
+
+Backend: Node.js with Express.js
+
+Database: MongoDB (Atlas / Compass)
+
+Each layer is modular and independently maintainable.
+
+2.2 Product Functions
+
+At a high level, the system enables users to:
+
+Enter structured resume data
+
+Preview resumes in real time
+
+Save resumes to a database
+
+Analyze resumes against job descriptions
+
+Export ATS-friendly resumes as PDF
+
+2.3 User Characteristics
+
+Target users include:
+
+Freshers and interns
+
+Entry-level professionals
+
+Experienced professionals
+
+Users are expected to have basic familiarity with web forms.
+
+2.4 Constraints
+
+No user authentication (Weeks 1–3)
+
+ATS logic is rule-based
+
+No AI / ML / NLP models
+
+Development-level deployment only
+
+2.5 Assumptions & Dependencies
+
+Internet connectivity is available
+
+MongoDB service is accessible
+
+Modern web browsers are used
+
 3. Functional Requirements
+🔹 Week 1 – Core Resume Builder
+
 FR-1: Resume Data Input
-The system shall allow users to input the following resume details:
-•	Personal Information (Name, Email, Phone, LinkedIn)
-•	Professional Summary
-•	Skills
-•	Experience
-•	Projects
-•	Education
-•	Courses & Certifications
-•	Declaration
-________________________________________
-FR-2: Dynamic Sections
-The system shall allow users to:
-•	Add multiple skills
-•	Add multiple experiences
-•	Add multiple projects
-•	Add multiple education entries
-•	Add multiple courses/certifications
-________________________________________
-FR-3: Resume Preview
-The system shall display a real-time preview of the resume as the user enters data.
-The preview shall:
-•	Follow a professional resume layout
-•	Display experience and projects in bullet-point format
-•	Avoid unnecessary symbols or brackets
-________________________________________
-FR-4: Fresher-Friendly Resume Support
-The system shall support resumes without experience by allowing:
-•	Projects section
-•	Skills-based resumes
-________________________________________
-FR-5: Resume Persistence
-The system shall save resume data to MongoDB when the user clicks Save Resume.
-________________________________________
-FR-6: Input Formatting
-The system shall:
-•	Render experience and project descriptions as bullet points
-•	Maintain clean spacing and readable layout
-•	Prevent empty or placeholder data from appearing in preview
-________________________________________
+The system shall allow users to enter:
+
+Personal information
+
+Education details
+
+Experience details
+
+Skills and certifications
+
+FR-2: Live Resume Preview
+The system shall display a real-time preview reflecting user inputs instantly.
+
+FR-3: Resume Data Storage
+The system shall store resume data in MongoDB using a structured schema.
+
+FR-4: Resume Schema Design
+The system shall define a definitive schema supporting education, experience, and skills.
+
+Week 1 Status: ✅ Implemented and locked
+
+🔹 Week 2 – ATS Analyzer
+
+FR-5: Job Description Input
+The system shall allow users to paste a job description for ATS evaluation.
+
+FR-6: Keyword Matching
+The system shall compare resume content with job description keywords.
+
+FR-7: ATS Score Calculation
+The system shall compute an ATS compatibility score (percentage).
+
+FR-8: ATS Result Display
+The system shall display:
+
+ATS score
+
+Matched keywords
+
+Missing keywords
+
+Week 2 Status: ✅ Implemented and locked
+
+🔹 Week 3 – Enhancements & Accuracy Improvements
+
+FR-9: Stopword Filtering
+The system shall remove non-technical stopwords from job descriptions.
+
+FR-10: Keyword Normalization
+The system shall normalize technical keywords
+(e.g., ReactJS → React, APIs → API).
+
+FR-11: ATS Match Classification
+The system shall classify results as:
+
+Poor Match
+
+Moderate Match
+
+Strong Match
+
+FR-12: ATS Feedback Suggestions
+The system shall provide actionable suggestions for improving ATS compatibility.
+
+FR-13: Resume Export
+The system shall allow users to download a single-page ATS-friendly PDF resume.
+
+Week 3 Status: ✅ Implemented and locked
+
 4. Non-Functional Requirements
-4.1 Usability
-•	UI must be intuitive and easy to understand
-•	Input fields must be properly spaced and readable
-•	Resume preview must resemble a real professional resume
-________________________________________
-4.2 Performance
-•	Resume preview should update instantly
-•	Save operation should complete within acceptable response time
-________________________________________
-4.3 Reliability
-•	Data entered by the user must not be lost before saving
-•	Application should not crash due to empty fields
-________________________________________
-4.4 Maintainability
-•	Codebase must follow modular React component structure
-•	Clear separation between UI, logic, and data management
-________________________________________
-4.5 Scalability
-•	System should allow future extensions such as:
-o	ATS score calculation
-o	PDF export
-o	AI-based suggestions
-________________________________________
-5. System Architecture (High-Level)
-[ React Frontend ]
-        |
-        |  REST API
-        |
-[ Node.js + Express ]
-        |
-        |
-[ MongoDB Database ]
-________________________________________
-6. Week-1 Deliverables
-•	Resume Builder UI
-•	Resume Preview UI
-•	Backend API for saving resume
-•	MongoDB schema for resume data
-•	SRS Documentation (this document)
-________________________________________
-7. Out of Scope (Week-1)
-•	Authentication & authorization
-•	ATS score calculation
-•	Resume templates
-•	PDF export
-•	AI resume suggestions
-________________________________________
-8. Conclusion
-Week-1 establishes the foundation of the ATS Resume Builder by delivering a functional, professional, and extensible resume creation system. The implementation ensures clean UI, proper data handling, and readiness for advanced features in subsequent phases.
-________________________________________
 
-***************************************************************************************************************************************************************************************************
-
-
-1. Introduction (Week 2 Scope)
-This section extends the Week 1 SRS by defining the functional and non-functional requirements implemented in Week 2.
-Week 2 focuses on core system functionality, data persistence, and ATS analysis.
-________________________________________
-2. Objectives (Week 2)
-•	Enable users to create structured resumes
-•	Persist resume data in a database
-•	Analyse resumes against job descriptions
-•	Improve usability and data validation
-•	Maintain enterprise-ready architecture
-________________________________________
-3. Functional Requirements (Week 2)
-FR-1: Resume Creation
-•	The system shall allow users to enter personal information.
-•	The system shall allow users to add:
-o	Professional summary
-o	Skills
-o	Experience
-o	Education
-o	Courses & Certifications
-o	Declaration
-•	The system shall display a real-time resume preview.
-________________________________________
-FR-2: Resume Persistence
-•	The system shall store resume data in MongoDB.
-•	The system shall provide an API to save resume data.
-•	The system shall prevent saving incomplete resumes.
-________________________________________
-FR-3: ATS Analyzer
-•	The system shall allow users to paste a Job Description.
-•	The system shall extract keywords from the Job Description.
-•	The system shall compare Job Description keywords with resume content.
-•	The system shall calculate an ATS score as a percentage match.
-•	The system shall display:
-o	ATS score
-o	Matched keywords
-o	Missing keywords
-________________________________________
-FR-4: Keyword Weighting
-•	The system shall prioritize keywords based on resume sections:
-o	Skills (highest priority)
-o	Experience (medium priority)
-o	Summary (lowest priority)
-________________________________________
-FR-5: Validation Rules
-•	The system shall disable the “Analyse Resume” button until a Job Description is provided.
-•	The system shall prevent invalid API calls.
-________________________________________
-4. Non-Functional Requirements (Week 2)
 NFR-1: Usability
-•	The UI shall be simple and consistent.
-•	Actions shall be clearly enabled or disabled based on input.
-________________________________________
-
+The system shall provide a clean, intuitive, and readable user interface.
 
 NFR-2: Performance
-•	ATS analysis shall complete within acceptable response time.
-•	Resume saving shall not block the UI.
-________________________________________
-NFR-3: Maintainability
-•	Code shall follow modular structure.
-•	Business logic shall be separated from UI logic.
-________________________________________
+ATS analysis shall complete within acceptable response time.
 
+NFR-3: Accuracy
+ATS scoring shall reduce noise using stopword filtering and normalization.
 
-NFR-4: Scalability
-•	The system shall support future enhancements such as:
-o	NLP-based ATS analysis
-o	Resume PDF export
-o	Authentication
-________________________________________
-5. Constraints
-•	ATS analysis is rule-based (no NLP in Week 2).
-•	The system does not support user authentication.
-•	Resume export is not included in Week 2.
-________________________________________
-6. Assumptions
-•	Users provide valid resume data.
-•	Job Descriptions are provided manually.
-•	MongoDB is available and properly configured.
-________________________________________
+NFR-4: Maintainability
+The system shall remain modular and easy to extend.
 
+6. Conclusion
 
-7. Future Scope
-•	Advanced ATS using NLP
-•	AI-powered resume improvement suggestions
-•	Resume export (PDF)
-•	User authentication and profile management
+Across three weeks, the ATS-Friendly Resume Builder has evolved into a stable, explainable, and enterprise-ready system:
 
-*****************************************************************
-Week 3 – SRS Enhancements
-1. Objective
-The objective of Week 3 is to improve the accuracy, usability, and output quality of the ATS Resume Builder by enhancing ATS analysis logic and adding resume export functionality.
-________________________________________
-2. Functional Requirements (Week 3)
-FR-6: Enhanced ATS Keyword Processing
-•	The system shall remove non-relevant stop words from job descriptions.
-•	The system shall normalize technical keywords (e.g., ReactJS → React, APIs → API).
-________________________________________
-FR-7: ATS Match Classification
-•	The system shall classify ATS scores into:
-o	Poor Match
-o	Moderate Match
-o	Strong Match
-•	The classification shall be based on predefined threshold values.
-________________________________________
-FR-8: ATS Feedback Suggestions
-•	The system shall generate rule-based suggestions for missing keywords.
-•	The system shall guide users on how to improve ATS compatibility.
-________________________________________
-FR-9: Resume Export
-•	The system shall allow users to download the resume as a PDF.
-•	The exported resume shall be formatted as a single-page ATS-friendly layout.
-________________________________________
+Week 1: Resume creation & storage
 
+Week 2: ATS analysis & scoring
 
-3. Non-Functional Requirements (Week 3)
-NFR-5: Accuracy
-•	The ATS scoring mechanism shall reduce noise by ignoring common non-technical words.
-NFR-6: Usability
-•	ATS results shall be easy to interpret through match levels and suggestions.
-NFR-7: Maintainability
-•	Enhancements shall remain rule-based and explainable to support future extensions.
-________________________________________
-4. Constraints
-•	The ATS logic remains rule-based.
-•	AI or NLP-based processing is not included in Week 3.
-________________________________________
-5. Week 3 Status
-•	All Week 3 requirements are implemented and verified.
-•	System is stable and ready for further enhancements.
+Week 3: Accuracy improvements & export
 
-
+All planned features for Weeks 1–3 are completed and locked.
