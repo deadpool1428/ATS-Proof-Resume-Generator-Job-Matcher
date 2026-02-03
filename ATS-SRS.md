@@ -240,3 +240,47 @@ ________________________________________
 •	Resume export (PDF)
 •	User authentication and profile management
 
+*****************************************************************
+Week 3 – SRS Enhancements
+1. Objective
+The objective of Week 3 is to improve the accuracy, usability, and output quality of the ATS Resume Builder by enhancing ATS analysis logic and adding resume export functionality.
+________________________________________
+2. Functional Requirements (Week 3)
+FR-6: Enhanced ATS Keyword Processing
+•	The system shall remove non-relevant stop words from job descriptions.
+•	The system shall normalize technical keywords (e.g., ReactJS → React, APIs → API).
+________________________________________
+FR-7: ATS Match Classification
+•	The system shall classify ATS scores into:
+o	Poor Match
+o	Moderate Match
+o	Strong Match
+•	The classification shall be based on predefined threshold values.
+________________________________________
+FR-8: ATS Feedback Suggestions
+•	The system shall generate rule-based suggestions for missing keywords.
+•	The system shall guide users on how to improve ATS compatibility.
+________________________________________
+FR-9: Resume Export
+•	The system shall allow users to download the resume as a PDF.
+•	The exported resume shall be formatted as a single-page ATS-friendly layout.
+________________________________________
+
+
+3. Non-Functional Requirements (Week 3)
+NFR-5: Accuracy
+•	The ATS scoring mechanism shall reduce noise by ignoring common non-technical words.
+NFR-6: Usability
+•	ATS results shall be easy to interpret through match levels and suggestions.
+NFR-7: Maintainability
+•	Enhancements shall remain rule-based and explainable to support future extensions.
+________________________________________
+4. Constraints
+•	The ATS logic remains rule-based.
+•	AI or NLP-based processing is not included in Week 3.
+________________________________________
+5. Week 3 Status
+•	All Week 3 requirements are implemented and verified.
+•	System is stable and ready for further enhancements.
+
+
