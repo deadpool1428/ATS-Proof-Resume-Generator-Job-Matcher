@@ -129,7 +129,35 @@ Week 2 focuses on implementing core functionality for the ATS Resume Builder, in
 
 ## Status
 Week 2 implementation is complete and locked.
+________________________________________
 
-
-
-
+🚀 Week 3 – Enhancements & Improvements
+Overview
+Week 3 focuses on improving ATS accuracy, enhancing user feedback, and enabling resume export while keeping the system rule-based and explainable.
+________________________________________
+✅ Features Added in Week 3
+•	Stopword filtering to remove non-relevant job description terms
+•	Keyword normalization for improved ATS matching
+•	Enhanced ATS scoring accuracy
+•	ATS match-level classification (Poor / Moderate / Strong)
+•	Actionable ATS feedback suggestions
+•	Resume export as a single-page ATS-friendly PDF
+•	Improved ATS Analyzer UI for clarity and usability
+________________________________________
+🧠 ATS Improvements (Week 3)
+•	Reduced noise in keyword matching
+•	Improved interpretability of ATS scores
+•	Clear guidance on resume optimization
+________________________________________
+🔒 Scope Control
+The following features are intentionally excluded from Week 3:
+•	AI-based resume rewriting
+•	NLP or machine learning models
+•	User authentication
+These are planned for future iterations.
+________________________________________
+📌 Week 3 Status
+✅ ATS accuracy improved
+✅ Feedback and classification added
+✅ Resume export implemented
+✅ Codebase stable and locked
