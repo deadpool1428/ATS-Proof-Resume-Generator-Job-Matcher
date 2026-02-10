@@ -180,4 +180,67 @@ These are planned for future iterations.
 - ✅ Codebase stable and locked  
 
 ---
+---
 
+## 🚀 Week 4: Authentication, Resume Persistence & ATS Analysis
+
+### 📌 Overview
+In Week 4, the ATS Resume Builder was enhanced with **secure user authentication**, **resume persistence**, and **advanced ATS analysis features**. This phase transforms the application into a **user-centric, production-style full-stack web application**.
+
+---
+
+## ✨ Features Implemented (Week 4)
+
+### 🔐 User Authentication
+- User Registration and Login using email and password
+- Password hashing with **bcrypt**
+- **JWT-based authentication**
+- Protected routes to restrict resume access
+- Secure Logout functionality
+- Automatic redirection to Login on app start
+
+---
+
+### 💾 Resume Persistence
+- Save resume data securely to **MongoDB Atlas**
+- Update existing resume details
+- Resume data linked to the authenticated user
+- Resume retrieval after login
+- Secure API access using JWT middleware
+
+---
+
+### 📊 ATS Resume Analyzer
+- ATS Match Score calculation based on Job Description
+- Detection of missing keywords
+- Keyword normalization and stop-word filtering
+- Clear and actionable feedback to improve resume quality
+
+---
+
+### 🎯 Job Readiness Evaluation
+- Resume completeness assessment
+- Job readiness score based on skills, experience, and education
+- Helps users understand employability gaps
+
+---
+
+## 🧱 Updated Tech Stack
+
+| Layer | Technology |
+|------|-----------|
+| Frontend | React.js, Context API |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas |
+| Authentication | JWT, bcrypt |
+| Styling | CSS |
+
+---
+
+## 🛠️ How to Run the Project
+
+### Backend
+```bash
+cd server
+npm install
+npm start
