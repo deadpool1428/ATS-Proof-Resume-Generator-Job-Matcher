@@ -189,4 +189,105 @@ Week 2: ATS analysis & scoring
 
 Week 3: Accuracy improvements & export
 
-All planned features for Weeks 1–3 are completed and locked.
+Week 4: Advanced Features & System Integration
+4.1 Overview
+
+Week 4 focuses on enhancing the ATS Resume Builder by integrating secure authentication, resume persistence, and advanced resume analysis features. This phase transitions the application from a static resume builder to a user-centric, data-driven web application.
+
+4.2 Functional Requirements (Week 4)
+FR-4.1 User Authentication
+
+The system shall allow users to register using email and password.
+
+The system shall allow users to log in using registered credentials.
+
+The system shall securely hash passwords using bcrypt.
+
+The system shall authenticate users using JWT-based authentication.
+
+The system shall restrict resume access to authenticated users only.
+
+FR-4.2 Resume Persistence
+
+The system shall allow authenticated users to save resumes to the database.
+
+The system shall associate each resume with a unique user account.
+
+The system shall allow users to update existing resumes.
+
+The system shall retrieve saved resumes when the user logs in.
+
+FR-4.3 ATS Resume Analysis
+
+The system shall analyze resume content against a provided job description.
+
+The system shall calculate an ATS Match Score.
+
+The system shall identify and display missing keywords.
+
+The system shall display matched and missing keywords visually.
+
+FR-4.4 Job Readiness Evaluation
+
+The system shall compute a Job Readiness Score based on:
+
+Resume completeness
+
+Skills presence
+
+Experience and education details
+
+The system shall provide feedback to help users improve job readiness.
+
+4.3 Non-Functional Requirements (Week 4)
+NFR-4.1 Security
+
+Passwords shall never be stored in plain text.
+
+JWT tokens shall be used to secure protected routes.
+
+Resume data shall be accessible only by the authenticated user.
+
+NFR-4.2 Usability
+
+The system shall provide a user-friendly login and registration interface.
+
+The system shall give clear success and error messages.
+
+Resume analysis results shall be easy to understand.
+
+NFR-4.3 Performance
+
+Resume analysis shall complete within an acceptable response time.
+
+Resume save and retrieval operations shall be optimized for minimal latency.
+
+4.4 System Architecture (Week 4 Enhancements)
+
+Frontend: React.js with Context API
+
+Backend: Node.js + Express.js
+
+Database: MongoDB Atlas
+
+Authentication: JWT + bcrypt
+
+Communication: RESTful APIs
+
+4.5 Constraints
+
+The application requires an active internet connection.
+
+MongoDB Atlas is used as the cloud database.
+
+The system depends on browser support for modern JavaScript features.
+
+4.6 Future Enhancements
+
+Google OAuth login
+
+Resume versioning
+
+PDF export
+
+AI-powered resume suggestions
