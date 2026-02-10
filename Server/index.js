@@ -5,30 +5,33 @@ require("dotenv").config();
 
 const app = express();
 
-/* Middleware */
+/* ---------------- MIDDLEWARE ---------------- */
 app.use(cors());
 app.use(express.json());
 
-/* MongoDB Connection */
+/* ---------------- MONGODB ---------------- */
 mongoose
   .connect(process.env.MONGO_URL)
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.error("MongoDB connection error:", err));
+  .then(() => console.log("MongoDB Atlas Connected"))
+  .catch((err) => {
+    console.error("MongoDB Connection Failed");
+    console.error(err);
+    process.exit(1);
+  });
 
-/* Routes */
+/* ---------------- ROUTES ---------------- */
+app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/resume", require("./routes/resumeRoutes"));
-const atsRoutes = require("./routes/atsRoutes");
+app.use("/api/ats", require("./routes/atsRoutes"));
+app.use("/api/ai", require("./routes/aiRoutes"));
 
-app.use("/api/ats", atsRoutes);
-
-
-/* Health Check */
+/* ---------------- HEALTH CHECK ---------------- */
 app.get("/", (req, res) => {
-  res.send("ATS Resume Builder Backend is running");
+  res.send("CareerForge Backend Running");
 });
 
-/* Server */
-const PORT = 5000;
+/* ---------------- SERVER ---------------- */
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
